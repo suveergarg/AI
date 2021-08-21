@@ -1,4 +1,4 @@
-import gym
+ import gym
 import numpy as np
 
 def valueIteration(env, gamma = 1.0):
@@ -97,7 +97,7 @@ def policyIteration(env, policy, gamma):
     @in : random / initial policy
     @out : optimal policy and optimal value function
     '''
-    
+
     max_iter = 1000
     eps = 1e-20
     value = np.zeros(env.env.nS)
