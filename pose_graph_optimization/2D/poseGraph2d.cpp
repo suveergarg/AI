@@ -10,7 +10,7 @@ using namespace std;
 #include<ceres/ceres.h>
 #include<Eigen/Dense>
 
-//Reference : https://github.com/mpkuse/toy-pose-graph-optimization-ceres/blob/master/ceres_vertigo.cpp 
+//Reference : https://github.com/mpkuse/toy-pose-graph-optimization-ceres/blob/master/ceres_vertigo.cpp
 
 //Store types of edges
 enum EdgeType{
@@ -26,8 +26,8 @@ class Node
     int index;
     double *p;
 
-    Node(int index, double x, double y, double theta): 
-        index(index), 
+    Node(int index, double x, double y, double theta):
+        index(index),
         x(x),
         y(y),
         theta(theta) {
@@ -39,7 +39,7 @@ class Node
 };
 
 class Edge
-{    
+{
     public:
 
     EdgeType edge_type;
@@ -110,7 +110,7 @@ class ReadG20
                     I22 = boost::lexical_cast<double>( words[9] );
                     I23 = boost::lexical_cast<double>( words[10] );
                     I33 = boost::lexical_cast<double>( words[11] );
-                
+
 
                     if(abs(idx_a - idx_b) > 0){
                         Edge *edge = new Edge(nodes[idx_a], nodes[idx_b], ODOMETRY_EDGE);
@@ -118,14 +118,14 @@ class ReadG20
                         edge->setEdgePose(dx, dy, dtheta);
                         odometry_edges.push_back(edge);
                     }
-                    else{ 
+                    else{
                         Edge *edge = new Edge(nodes[idx_a], nodes[idx_b], CLOSURE_EDGE);
                         edge->setInformationMatrix(I11, I12, I13, I22, I23, I33);
                         edge->setEdgePose(dx, dy, dtheta);
                         closure_edges.push_back(edge);
                     }
                 }
-            } 
+            }
         }
 
         void writePoseGraph_nodes(const string& fname){
@@ -231,7 +231,8 @@ struct PoseResidue{
 //Assumes .g20 file is in the same directory
 int main(){
 
-    string fname = "../input_M3500_g2o.g2o";
+    //string fname = "../input_M3500_g2o.g2o";
+    string fname = "../input_MITb_g2o.g2o";
     cout<< "Reading Pose Graph "<< fname <<endl;
     ReadG20 g(fname);
 
@@ -260,14 +261,14 @@ int main(){
     }
 
     //Setting first node as the prior
-    problem.SetParameterBlockConstant(g.nodes[0]->p); 
+    problem.SetParameterBlockConstant(g.nodes[0]->p);
 
     ceres::Solver::Options options;
     options.linear_solver_type = ceres::SPARSE_SCHUR;
     options.minimizer_progress_to_stdout = true;
     options.trust_region_strategy_type = ceres::DOGLEG;
     options.dogleg_type = ceres::SUBSPACE_DOGLEG;
-    
+
     ceres::Solver::Summary summary;
     ceres::Solve(options, &problem, &summary);
     cout << summary.FullReport() << endl;
@@ -277,3 +278,4 @@ int main(){
 
     return 0;
 }
+ 
