@@ -20,3 +20,7 @@
 
 ### Datasets to Experiment With
 1. https://lucacarlone.mit.edu/datasets/
+
+### Other Resources
+1. https://www.youtube.com/watch?v=saVZtgPyyJQ
+2. Eigen Tutorial : https://www.cc.gatech.edu/classes/AY2015/cs4496_spring/Eigen.html

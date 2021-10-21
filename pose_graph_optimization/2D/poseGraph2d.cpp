@@ -229,10 +229,10 @@ struct PoseResidue{
 };
 
 //Assumes .g20 file is in the same directory
-int main(){
+int main(int argc, char* argv[]){
 
     //string fname = "../input_M3500_g2o.g2o";
-    string fname = "../input_MITb_g2o.g2o";
+    string fname(argv[1]);
     cout<< "Reading Pose Graph "<< fname <<endl;
     ReadG20 g(fname);
 
@@ -278,4 +278,4 @@ int main(){
 
     return 0;
 }
- 
+

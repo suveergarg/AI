@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/suveer/AI/pose_graph_optimization/2D
+CMAKE_SOURCE_DIR = /home/suveer/AI/pose_graph_optimization/3D
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/suveer/AI/pose_graph_optimization/2D/build
+CMAKE_BINARY_DIR = /home/suveer/AI/pose_graph_optimization/3D/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suveer/AI/pose_graph_optimization/2D/build/CMakeFiles /home/suveer/AI/pose_graph_optimization/2D/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suveer/AI/pose_graph_optimization/3D/build/CMakeFiles /home/suveer/AI/pose_graph_optimization/3D/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/suveer/AI/pose_graph_optimization/2D/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/suveer/AI/pose_graph_optimization/3D/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named poseGraph2d
+# Target rules for targets named poseGraph3d
 
 # Build rule for target.
-poseGraph2d: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 poseGraph2d
-.PHONY : poseGraph2d
+poseGraph3d: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 poseGraph3d
+.PHONY : poseGraph3d
 
 # fast build rule for target.
-poseGraph2d/fast:
-	$(MAKE) -f CMakeFiles/poseGraph2d.dir/build.make CMakeFiles/poseGraph2d.dir/build
-.PHONY : poseGraph2d/fast
+poseGraph3d/fast:
+	$(MAKE) -f CMakeFiles/poseGraph3d.dir/build.make CMakeFiles/poseGraph3d.dir/build
+.PHONY : poseGraph3d/fast
 
-poseGraph2d.o: poseGraph2d.cpp.o
+poseGraph3d.o: poseGraph3d.cpp.o
 
-.PHONY : poseGraph2d.o
+.PHONY : poseGraph3d.o
 
 # target to build an object file
-poseGraph2d.cpp.o:
-	$(MAKE) -f CMakeFiles/poseGraph2d.dir/build.make CMakeFiles/poseGraph2d.dir/poseGraph2d.cpp.o
-.PHONY : poseGraph2d.cpp.o
+poseGraph3d.cpp.o:
+	$(MAKE) -f CMakeFiles/poseGraph3d.dir/build.make CMakeFiles/poseGraph3d.dir/poseGraph3d.cpp.o
+.PHONY : poseGraph3d.cpp.o
 
-poseGraph2d.i: poseGraph2d.cpp.i
+poseGraph3d.i: poseGraph3d.cpp.i
 
-.PHONY : poseGraph2d.i
+.PHONY : poseGraph3d.i
 
 # target to preprocess a source file
-poseGraph2d.cpp.i:
-	$(MAKE) -f CMakeFiles/poseGraph2d.dir/build.make CMakeFiles/poseGraph2d.dir/poseGraph2d.cpp.i
-.PHONY : poseGraph2d.cpp.i
+poseGraph3d.cpp.i:
+	$(MAKE) -f CMakeFiles/poseGraph3d.dir/build.make CMakeFiles/poseGraph3d.dir/poseGraph3d.cpp.i
+.PHONY : poseGraph3d.cpp.i
 
-poseGraph2d.s: poseGraph2d.cpp.s
+poseGraph3d.s: poseGraph3d.cpp.s
 
-.PHONY : poseGraph2d.s
+.PHONY : poseGraph3d.s
 
 # target to generate assembly for a file
-poseGraph2d.cpp.s:
-	$(MAKE) -f CMakeFiles/poseGraph2d.dir/build.make CMakeFiles/poseGraph2d.dir/poseGraph2d.cpp.s
-.PHONY : poseGraph2d.cpp.s
+poseGraph3d.cpp.s:
+	$(MAKE) -f CMakeFiles/poseGraph3d.dir/build.make CMakeFiles/poseGraph3d.dir/poseGraph3d.cpp.s
+.PHONY : poseGraph3d.cpp.s
 
 # Help Target
 help:
@@ -158,10 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... poseGraph2d"
-	@echo "... poseGraph2d.o"
-	@echo "... poseGraph2d.i"
-	@echo "... poseGraph2d.s"
+	@echo "... poseGraph3d"
+	@echo "... poseGraph3d.o"
+	@echo "... poseGraph3d.i"
+	@echo "... poseGraph3d.s"
 .PHONY : help
 
 
