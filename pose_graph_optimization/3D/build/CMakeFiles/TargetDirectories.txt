@@ -1,3 +1,0 @@
-/home/suveer/AI/pose_graph_optimization/3D/build/CMakeFiles/rebuild_cache.dir
-/home/suveer/AI/pose_graph_optimization/3D/build/CMakeFiles/edit_cache.dir
-/home/suveer/AI/pose_graph_optimization/3D/build/CMakeFiles/poseGraph3d.dir
