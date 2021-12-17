@@ -5,7 +5,7 @@ on:
     types: [synchronize, opened, reopened]
 
 jobs:
-  build:
+  PythonLinting:
     
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +22,8 @@ jobs:
           pip install pylint
       - name: Analysing with pylint
         run: |
-          find . -name '*.py' -exec pylint \
-          --disable=fixme,import-error,consider-using-f-string \
-          --unsafe-load-any-extension=y \
-          {} \;
+          cd $GITHUB_WORKSPACE/AI
+          git ls-files | \
+          grep 'py$' | \
+          xargs pylint --unsafe-load-any-extension=y \
+            --disable=fixme,import-error,consider-using-f-string;
