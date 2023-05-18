@@ -1,18 +1,52 @@
 #include<iostream>
 #include<memory>
-void compute(std::unique_ptr<int[]> p){
 
+using namespace std;
 
-    return;
+class Rectangle{
+    int height;
+    int length;
+
+    public:
+
+    Rectangle(int l, int h): length(l), height(h){
+    }
+
+    int area(){
+        return length * height;
+    }
+};
+
+void func(shared_ptr<int> ptr){
+    cout<<"Here p1: "<<ptr.use_count()<<endl;
+}
+
+void func1(unique_ptr<Rectangle> ptr){
+    cout<<"You should never come into this function"<<endl;
 }
 
 int main(){
 
-    std::unique_ptr<int[]> ptr = std::make_unique<int[]>(1024);
-    //std::unique_ptr<int[]> p = ptr; // This will lead to an error
-    //compute(ptr);
-    //Ptr is passed by copy which is not allowed
+    std::unique_ptr<Rectangle> ptr(new Rectangle(10, 5));
+    cout<<ptr->area()<<endl;
+    unique_ptr<Rectangle> ptr2;
+    ptr2 = move(ptr);
+    cout<<ptr2->area()<<endl;
 
-    std::shared_ptr<int> p1(new int);
+    //The following line will throw an error
+    //cout<<ptr->area()<<endl;
+    //func1(ptr2);
+
+    std::shared_ptr<int> p1(new int(70));
+    cout<<"p1 :"<<p1.use_count()<<endl;
     std::shared_ptr<int> p2(p1);
+    cout<<"p1 :"<<p1.use_count()<<endl;
+    
+    func(p1);
+    cout<<"p1 :"<<p1.use_count()<<endl;
+    cout<<*p1<<endl;
+    cout<<*p2<<endl;
+
+    return -1;
+
 }
