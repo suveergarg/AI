@@ -6,4 +6,5 @@
 
 ```bash
 g++ smart_pointers.cpp -o smart_pointers
+g++ mutex_example.cpp -pthread -o mutex_example
 ```
