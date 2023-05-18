@@ -47,6 +47,8 @@ int main(){
     cout<<*p1<<endl;
     cout<<*p2<<endl;
 
+    // TODO weak pointers
+
     return -1;
 
 }
