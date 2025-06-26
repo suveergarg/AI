@@ -1,0 +1,5 @@
+{
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  "C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy", // adjust if needed
+  "C_Cpp.codeAnalysis.clangTidy.config": ""
+}
