@@ -1,3 +1,0 @@
-/home/gsuveer/AI/BT/simple_pick/build/CMakeFiles/bt_simple_pick.dir
-/home/gsuveer/AI/BT/simple_pick/build/CMakeFiles/edit_cache.dir
-/home/gsuveer/AI/BT/simple_pick/build/CMakeFiles/rebuild_cache.dir
